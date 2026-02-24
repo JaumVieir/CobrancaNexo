@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router';
 
-const API_BASE = "http://localhost:3000"
+const API_BASE = "postgres-teste-production.up.railway.app"
 
 const route = useRoute()
 const router = useRouter()

@@ -34,7 +34,7 @@ onMounted(async () => {
       return;
     }
 
-    const r = await fetch(`postgres-teste-production.up.railway.app/api/dados?token=${sessao}`);
+    const r = await fetch(`https://cobrancanexo-backend-production.up.railway.app/api/dados?token=${sessao}`);
     
     if(r.status === 401){
       localStorage.removeItem(`sessao_${token}`);

@@ -1,0 +1,681 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #f5f5f5;
+  padding: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header com dados do morador */
+.header-box {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+  color: white;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 1px;
+  flex-shrink: 0;
+}
+
+.exit-hint {
+  display: none;
+}
+
+.key {
+  display: none;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.morador-info {
+  flex: 1;
+}
+
+.morador-nome {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.morador-detalhes {
+  font-size: 11px;
+  opacity: 0.95;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.separator {
+  opacity: 0.7;
+}
+
+.total-box {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.total-amount {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  word-break: break-word;
+}
+
+/* Tabela */
+.table-container {
+  background-color: white;
+  overflow: auto;
+  max-height: calc(100vh - 250px);
+  margin: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-height: 0;
+}
+
+.debitos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.debitos-table thead {
+  background-color: #f0f4f8;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.debitos-table thead tr {
+  border-bottom: 2px solid #e0e7f0;
+}
+
+.debitos-table th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 13px;
+}
+
+.debitos-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+.debitos-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.debitos-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.debitos-table tbody tr:nth-child(even) {
+  background-color: #f1f3f5;
+}
+
+.col-descricao {
+  width: 25%;
+  color: #1e3a5f;
+  font-weight: 600;
+}
+
+.col-encargo {
+  width: 50%;
+  color: #555;
+}
+
+.col-valor {
+  width: 25%;
+  text-align: right;
+  color: #666;
+}
+
+/* Proposta de Acordo */
+.acordo-box {
+  background-color: white;
+  border: 2px solid #1e3a5f;
+  border-radius: 8px;
+  overflow: visible;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 0.6;
+}
+
+/* Footer Section - 2 colunas */
+.footer-section {
+  display: flex;
+  gap: 2px;
+  margin: 1px;
+  flex-shrink: 0;
+  max-height: 170px;
+  overflow: visible;
+}
+
+/* Informações sobre Cobrança */
+.cobranca-info-box {
+  background-color: white;
+  border: 2px solid #1e3a5f;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1.4;
+}
+
+.info-title {
+  background-color: #1e3a5f;
+  color: white;
+  padding: 8px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 12px;
+}
+
+.info-content {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+}
+
+.info-items-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: auto;
+}
+
+.info-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #1e3a5f;
+  text-transform: uppercase;
+}
+
+.info-value {
+  font-size: 12px;
+  color: #333;
+  font-weight: 500;
+}
+
+.status-juridico {
+  margin-top: 0;
+}
+
+.status-badge {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  border-left: 3px solid #ffc107;
+}
+
+.acordo-title {
+  background-color: #1e3a5f;
+  color: white;
+  padding: 8px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 12px;
+}
+
+.acordo-content {
+  padding: 4px 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.desconto-info {
+  margin-bottom: 0;
+}
+
+.entrada-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+}
+
+.restante-label {
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+.desconto-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2c5aa0;
+  margin-bottom: 0;
+}
+
+.valor-destaque {
+  font-weight: 700;
+  color: #2c5aa0;
+}
+
+.desconto-detalhes {
+  font-size: 12px;
+  color: #666;
+}
+
+.btn-aceitar {
+  background-color: #2c5aa0;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.btn-aceitar:hover {
+  background-color: #1e3a5f;
+}
+
+.btn-aceitar:active {
+  transform: scale(0.98);
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .container {
+    padding: 1px;
+  }
+
+  .header-box {
+    padding: 8px;
+    margin: 1px;
+  }
+
+  .table-container {
+    margin: 1px;
+    max-height: calc(100vh - 240px);
+  }
+
+  .footer-section {
+    margin: 1px;
+    gap: 6px;
+    max-height: 150px;
+  }
+
+  .morador-nome {
+    font-size: 15px;
+  }
+
+  .exit-hint {
+    font-size: 11px;
+  }
+
+  .total-amount {
+    font-size: 20px;
+  }
+
+  .debitos-table th,
+  .debitos-table td {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .acordo-content {
+    padding: 4px 8px;
+  }
+  .entrada-label {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
+
+  .restante-label {
+    color: #333 !important;
+    font-weight: 500 !important;
+  }
+
+  .desconto-label {
+    font-size: 12px;
+  }
+  .btn-aceitar {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .info-content {
+    padding: 12px;
+  }
+
+  .info-items-row {
+    gap: 8px;
+  }
+
+  .status-badge {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  .info-title {
+    font-size: 13px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1px;
+    height: 100dvh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .header-box {
+    padding: 8px;
+    margin: 1px;
+  }
+
+  .table-container {
+    margin: 1px;
+    max-height: unset;
+    overflow-x: auto;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .debitos-table {
+    min-width: 760px;
+  }
+
+  .footer-section {
+    flex-direction: column;
+    margin: 1px;
+    gap: 2px;
+    overflow: visible;
+    max-height: none;
+    flex-shrink: 0;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .total-box {
+    text-align: left;
+    width: 100%;
+  }
+
+  .total-amount {
+    font-size: 18px;
+  }
+
+  .morador-nome {
+    font-size: 14px;
+  }
+
+  .morador-detalhes {
+    font-size: 11px;
+  }
+
+  .debitos-table th,
+  .debitos-table td {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .col-descricao,
+  .col-encargo,
+  .col-valor {
+    width: auto;
+  }
+
+  .acordo-content {
+    padding: 2px 6px;
+  }
+
+  .entrada-label {
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
+
+  .restante-label {
+    color: #333 !important;
+    font-weight: 500 !important;
+  }
+
+  .desconto-label {
+    font-size: 11px;
+  }
+
+  .btn-aceitar {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .info-content {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .info-items-row {
+    gap: 6px;
+  }
+
+  .info-title {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .info-label {
+    font-size: 11px;
+  }
+
+  .info-value {
+    font-size: 13px;
+  }
+
+  .status-badge {
+    font-size: 11px;
+  }
+
+  .acordo-box {
+    flex: 1;
+    min-height: auto;
+  }
+
+  .cobranca-info-box {
+    flex: 1;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1px;
+    height: 100dvh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .header-box {
+    padding: 4px;
+    margin: 1px;
+    border-radius: 4px;
+  }
+
+  .table-container {
+    border-radius: 4px;
+    max-height: unset;
+    overflow-x: auto;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+    margin: 1px;
+  }
+
+  .debitos-table {
+    min-width: 700px;
+  }
+
+  .footer-section {
+    flex-direction: column;
+    margin: 1px;
+    gap: 2px;
+    overflow: visible;
+    max-height: none;
+    flex-shrink: 0;
+  }
+
+  .exit-hint {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .total-box {
+    text-align: left;
+    width: 100%;
+  }
+
+  .morador-nome {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .morador-detalhes {
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .total-amount {
+    font-size: 16px;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+
+  .debitos-table th,
+  .debitos-table td {
+    padding: 4px 2px;
+    font-size: 9px;
+  }
+
+  .acordo-box {
+    border-radius: 6px;
+    flex: 1;
+    min-height: auto;
+  }
+
+  .acordo-title {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  .acordo-content {
+    padding: 4px 6px;
+  }
+
+  .entrada-label {
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
+
+  .restante-label {
+    color: #333 !important;
+    font-weight: 500 !important;
+  }
+
+  .desconto-label {
+    font-size: 11px;
+  }
+
+  .btn-aceitar {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .info-title {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .info-content {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .info-items-row {
+    gap: 6px;
+  }
+
+  .info-item {
+    gap: 3px;
+  }
+
+  .info-label {
+    font-size: 10px;
+  }
+
+  .info-value {
+    font-size: 12px;
+  }
+
+  .status-badge {
+    padding: 4px 4px;
+    font-size: 9px;
+  }
+
+  .cobranca-info-box {
+    flex: 1;
+    min-height: auto;
+    overflow: visible;
+  }
+}

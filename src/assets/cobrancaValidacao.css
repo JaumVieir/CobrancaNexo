@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+/* Header */
+.header-box {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+}
+
+.exit-hint {
+  font-size: 9px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+
+.key {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  margin: 0 4px;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.center-content {
+  display: none;
+}
+
+.cpf-box {
+  background-color: white;
+  border-radius: 0;
+  padding: 15px;
+  box-shadow: none;
+  border: none;
+}
+
+.cpf-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e3a5f;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* Inputs de CPF */
+.cpf-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  flex-wrap: nowrap;
+}
+
+.cpf-input {
+  width: 30px;
+  height: 36px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid #e0e7f0;
+  border-radius: 6px;
+  color: #1e3a5f;
+  transition: all 0.3s ease;
+}
+
+.cpf-input:focus {
+  outline: none;
+  border-color: #2c5aa0;
+  box-shadow: 0 0 8px rgba(44, 90, 160, 0.2);
+  background-color: #f8fafc;
+}
+
+.cpf-input::placeholder {
+  color: #bbb;
+}
+
+.cpf-hint {
+  font-size: 10px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* Botões */
+.button-group {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.btn-validar,
+.btn-limpar {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-validar {
+  background-color: #2c5aa0;
+  color: white;
+  flex: 1;
+  max-width: 110px;
+}
+
+.btn-validar:hover {
+  background-color: #1e3a5f;
+  box-shadow: 0 4px 8px rgba(30, 58, 95, 0.2);
+}
+
+.btn-validar:active {
+  transform: scale(0.98);
+}
+
+.btn-limpar {
+  background-color: #f0f4f8;
+  color: #2c5aa0;
+  flex: 1;
+  max-width: 100px;
+  border: 2px solid #2c5aa0;
+}
+
+.btn-limpar:hover {
+  background-color: #e0e7f0;
+  box-shadow: 0 2px 4px rgba(44, 90, 160, 0.1);
+}
+
+.btn-limpar:active {
+  transform: scale(0.98);
+}
+
+/* Responsivo para tablets e telas maiores */
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
+  .header-box {
+    margin-bottom: 0;
+    padding: 8px;
+  }
+
+  .header-title {
+    font-size: 12px;
+  }
+
+  .cpf-box {
+    padding: 12px;
+  }
+
+  .cpf-title {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .cpf-inputs {
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .cpf-input {
+    width: 28px;
+    height: 34px;
+    font-size: 12px;
+  }
+
+  .cpf-hint {
+    font-size: 9px;
+    margin-bottom: 8px;
+  }
+
+  .button-group {
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .btn-validar,
+  .btn-limpar {
+    padding: 7px 12px;
+    font-size: 10px;
+  }
+}
+
+/* Responsivo para celulares */
+@media (max-width: 480px) {
+  .container {
+    padding: 0;
+  }
+
+  .header-box {
+    margin-bottom: 0;
+    padding: 6px;
+  }
+
+  .exit-hint {
+    font-size: 8px;
+    margin-bottom: 4px;
+  }
+
+  .header-title {
+    font-size: 11px;
+  }
+
+  .center-content {
+    padding: 0;
+  }
+
+  .cpf-box {
+    padding: 10px;
+  }
+
+  .cpf-title {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .cpf-inputs {
+    gap: 3px;
+    margin-bottom: 6px;
+  }
+
+  .cpf-input {
+    width: 26px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  .cpf-hint {
+    font-size: 8px;
+    margin-bottom: 6px;
+  }
+
+  .button-group {
+    gap: 4px;
+  }
+
+  .btn-validar,
+  .btn-limpar {
+    padding: 6px 10px;
+    font-size: 9px;
+  }
+}
+
+/* Responsivo para celulares pequenos */
+@media (max-width: 360px) {
+  .cpf-box {
+    max-width: 100%;
+  }
+
+  .cpf-input {
+    width: 24px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .cpf-inputs {
+    gap: 2px;
+  }
+
+  .cpf-box {
+    padding: 6px;
+  }
+
+  .cpf-title {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  .button-group {
+    gap: 3px;
+  }
+
+  .btn-validar,
+  .btn-limpar {
+    padding: 5px 8px;
+    font-size: 8px;
+  }
+}
